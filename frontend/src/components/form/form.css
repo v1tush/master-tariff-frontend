@@ -1,0 +1,101 @@
+.tariffs-form {
+  max-width: 1200px;
+  margin: 0 auto var(--spacing-4xl) auto;
+  padding: var(--spacing-2xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-primary);
+  transition: background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+}
+
+.tariffs-form h3 {
+  grid-column: 1 / -1;
+  margin: 0 0 var(--spacing-xs);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+  transition: color var(--transition-base);
+}
+
+.tariffs-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-base);
+}
+
+.tariffs-form input,
+.tariffs-form .autocomplete-input {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 16px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-secondary);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.tariffs-form input::placeholder,
+.tariffs-form .autocomplete-input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.tariffs-form input:focus,
+.tariffs-form .autocomplete-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-focus);
+}
+
+.tariffs-form .error-text {
+  color: var(--color-error);
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.tariffs-form .weight-input.error,
+.tariffs-form .autocomplete-input.error {
+  border-color: var(--color-border-error) !important;
+  background-color: var(--color-bg-error) !important;
+}
+
+.tariffs-form .submit-btn {
+  grid-column: 1 / -1;
+  margin-top: var(--spacing-sm);
+  padding: 18px;
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-slow) ease;
+  box-shadow: var(--shadow-button);
+}
+
+.tariffs-form .submit-btn:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button-hover);
+}
+
+@media (max-width: 600px) {
+  .tariffs-form {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-lg);
+    margin: 20px;
+  }
+}

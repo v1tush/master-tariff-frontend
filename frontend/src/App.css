@@ -1,0 +1,7 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* колонки под размер карточки */
+  grid-auto-rows: minmax(150px, auto); /* высота карточки */
+  gap: var(--spacing-sm); /* отступы между карточками */
+  padding: var(--spacing-md); /* внутренний отступ контейнера */
+}

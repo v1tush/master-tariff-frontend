@@ -1,0 +1,156 @@
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-2xl) var(--spacing-4xl) var(--spacing-2xl);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* компактнее */
+  gap: var(--spacing-lg);
+}
+
+/* --- CARD --- */
+
+.delivery-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 150px; /* уменьшено */
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border-primary);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md); /* уменьшено */
+  transition: all var(--transition-cubic);
+  overflow: hidden;
+}
+
+.delivery-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm); /* уменьшено */
+  flex: 1;
+}
+
+/* --- PRICE --- */
+
+.price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.price {
+  font-size: 24px; /* компактнее */
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  transition: color var(--transition-base);
+}
+
+/* --- AI BADGE --- */
+
+.ai-badge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+}
+
+/* --- TARIFF SECTION --- */
+
+.tariff-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.tariff-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+  transition: color var(--transition-base);
+}
+
+.tariff-name {
+  font-size: 18px; /* чуть меньше */
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.2;
+  transition: color var(--transition-base);
+}
+
+/* --- DELIVERY TIME --- */
+
+.delivery-time {
+  font-size: 14px; /* компактнее */
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+}
+
+/* --- MANUAL PRICING --- */
+
+.manual-pricing {
+  margin-top: auto;
+  padding-top: var(--spacing-sm);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-base);
+}
+
+/* --- ACCENT LINE --- */
+
+.accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-slow) ease;
+}
+
+.delivery-card:hover .accent-line {
+  transform: scaleX(1);
+}
+
+/* --- RESPONSIVE --- */
+
+@media (max-width: 600px) {
+  .cards {
+    padding: 0 var(--spacing-lg) var(--spacing-2xl) var(--spacing-lg);
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .tariff-name {
+    font-size: 16px;
+  }
+
+  .delivery-card {
+    padding: var(--spacing-sm);
+    min-height: 130px;
+  }
+}
